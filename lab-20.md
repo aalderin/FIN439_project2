@@ -95,9 +95,13 @@ def lowest_risk_mix(sleeves, correlations, objective, reserve_assets, reserve_mi
 
 ## E — Fix one thing
 
-* **Cold run result:** **Clean cold run recorded — no fix needed.**
-* **Partner verification:** The partner executed the complete build sequence (`git clone`, `python -m venv`, `source activate`, `pip install`, `python portfolio.py`, `python mandate.py`, and `streamlit run app.py`) from 4:56 PM to 4:59 PM with zero error text and immediate visible output on `localhost:8501`.
-* **Proactive documentation note:** Ensured the master `README.md` includes cross-platform activation instructions for both Unix shells (`source .venv/bin/activate`) and Windows PowerShell (`.venv\Scripts\Activate.ps1`) to maintain zero-friction execution.
+* **Partner critique:** The shared link is `https://github.com/aalderin/FIN439_project2`, but the `README.md` clone instructions initially told a stranger to clone `finance-ai-course` (`git clone https://github.com/aalderin/finance-ai-course.git` and `cd finance-ai-course`). This caused ambiguity about which repository is the official canonical Project 2 submission.
+* **Fix pushed:** Standardized the canonical Project 2 repository across all documentation. Updated `README.md` and `docs/submission-manifest.md` to:
+  ```bash
+  git clone https://github.com/aalderin/FIN439_project2.git
+  cd FIN439_project2
+  ```
+* **Partner rerun:** Partner confirmed the clone command now matches the shared repository URL with zero ambiguity.
 
 ---
 

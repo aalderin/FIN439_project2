@@ -14,9 +14,9 @@ A stranger can clone this repository and run the primary investment management a
 Clone the repository, ensure Python 3.10+ is installed, create an environment, and install dependencies:
 
 ```bash
-# Clone the repository
-git clone https://github.com/aalderin/finance-ai-course.git
-cd finance-ai-course
+# Clone the canonical Project 2 repository
+git clone https://github.com/aalderin/FIN439_project2.git
+cd FIN439_project2
 
 # Create and activate virtual environment
 python -m venv .venv
@@ -155,7 +155,7 @@ The system incorporates an automated 10-K audit panel (`Skill/buffett_app.py`) e
 ## 8. Repository Structure & Artifact Manifest
 
 ```
-finance-ai-course/
+FIN439_project2/
 │
 ├── README.md                            # Project 2 master reproduction guide & documentation
 ├── app.py                               # Primary Streamlit portfolio management app
