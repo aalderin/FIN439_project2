@@ -4,7 +4,7 @@
 **From:** Portfolio Analyst  
 **Date:** November 2026  
 **Subject:** Asset Allocation Recommendation — Lowest-Risk Multi-Asset Portfolio Under Reserve Mandate  
-**Classification:** Major Project 2 Deliverable (`docs/decision-memo.md`)  
+**Classification:** Major Project 2 Deliverable (`decision-memo.md`)  
 
 > **AI Disclosure:** This memorandum was prepared with assistance from Google Antigravity (Anthropic Claude and Google Gemini models) for structural outlining, sensitivity cross-checking, and drafting assistance. All portfolio calculations, historical data audits, constraint evaluations, and final investment recommendations are the independent work and responsibility of the author.  
 > **Course Disclaimer:** Prepared for FIN 43900 (AI in Finance) at Purdue University. This document is an educational demonstration and analytical model, **not investment advice**.
@@ -43,7 +43,7 @@ The portfolio was engineered to comply with the Meridian Foundation Investment P
 4. **Single-Issuer Limit:** No single corporate issuer may exceed 8.0% of portfolio value (all ETF sleeves satisfy this requirement through broad diversification).
 
 ### Investment Universe & Data Provenance
-Asset parameters were estimated using 60 monthly adjusted-close observations from [`prices.csv`](../prices.csv) (November 2021 through October 2026), sourced from Yahoo Finance on 2026-10-22:
+Asset parameters were estimated using 60 monthly adjusted-close observations from [`prices.csv`](prices.csv) (November 2021 through October 2026), sourced from Yahoo Finance on 2026-10-22:
 
 | Ticker | Asset Class / Sleeve | 60-Mo Ann. Return | 60-Mo Ann. Vol | Reserve-Eligible? |
 | :--- | :--- | :---: | :---: | :---: |
@@ -108,4 +108,3 @@ The committee should suspend the pilot and revert to cash preservation or a defe
 
 ### Conclusion
 The 65% SGOV / 35% VTI portfolio is mathematically sound and compliant with all mandate constraints, but its sensitivity to sample length and equity return assumptions warrants disciplined caution. A **Pilot** captures superior risk-adjusted yields while maintaining institutional safety.
-
