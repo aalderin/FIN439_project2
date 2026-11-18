@@ -1,0 +1,22 @@
+Transcript - Video 3: Investment Committee Defense
+Student: A. Alderin
+Course: FIN 43900 (AI in Finance), Fall 2026, Purdue University
+Project 2: Investment Management Application
+
+[0:00 - 0:25]
+Good morning members of the Investment Committee. My name is A. Alderin, and this is my committee defense for Project 2. As required: I utilized AI tools, specifically Google Antigravity with Claude and Gemini, for model structuring and documentation support. However, all portfolio analysis, risk modeling, and this investment recommendation are entirely my own. This presentation is an educational demonstration for class, not investment advice. On screen, our portfolio optimization app is running live.
+
+[0:25 - 1:15]
+I will lead directly with my recommendation: I recommend that the committee approve a bounded Pilot allocation, rather than full immediate adoption across foundation assets. Our recommended target portfolio is: 65% in SGOV (0-3 Month Treasury ETF); 35% in VTI (Total Stock Market ETF); and 0% in intermediate government or corporate bonds. Under our mandate constraints, this mix achieves: an expected annual return of 6.79%, clearing our 6.50% hurdle; expected annual volatility of 5.62%—the lowest-risk feasible allocation on the grid; and a 65.0% reserve-eligible weight, easily satisfying our 3.0% distribution liquidity requirement.
+
+[1:15 - 2:05]
+Why should the committee consider this over standard industry benchmarks? First, a naive Equal-Weight portfolio fails our mandate immediately: dragging 50% in intermediate bonds pulls expected return down to 4.36%, completely missing our 6.50% objective. Second, while a traditional 60/40 equity-and-bond benchmark clears the return hurdle at 7.64%, it carries a high volatility of 10.36%. Our optimized pilot mix cuts portfolio volatility nearly in half—down to 5.62%. By holding short-term cash yielding 3.83% with virtually zero risk, paired with a 35% equity growth engine, we achieve our foundation's return objective with significantly less drawdown risk than a 60/40 blend.
+
+[2:05 - 3:00]
+A committee member should reasonably ask: 'If the risk-adjusted numbers look so good, why not adopt it for the entire endowment right now?' The answer lies in lookback sensitivity. When we stress-test the data by switching from our full 5-year sample to a trailing 3-year window, our asset allocation swings by 20 percentage points: SGOV surges from 65% to 85%, and equity drops from 35% to 15%. That happened because equities averaged a huge 22% annual return over the last three years. The optimizer saw that high return and realized it could hit our 6.5% target with barely any stock exposure, dumping 85% into cash. This proves that the algorithm is hyper-sensitive to the time horizon. If forward stock returns normalize, the optimizer will be forced to shift weights back into equities. Because of that estimation fragility, adopting this system unconstrained across the entire portfolio would be irresponsible.
+
+[3:00 - 3:55]
+Therefore, we establish a bounded allocation range: 60% to 85% SGOV and 15% to 40% VTI. To protect the foundation, the pilot operates under four strict reversal triggers that would pause the strategy: First, Equity Return Drop: If forward consensus expected return for VTI falls below 11.0%, the model would have to allocate over 40% to equity, violating our low-volatility thesis; trigger action: freeze rebalancing. Second, Volatility Spike: If trailing 12-month realized equity volatility spikes above 18.0%, the pilot is halted for risk review. Third, Cash Yield Compression: If Federal Reserve rate cuts drive SGOV yield below 2.50%, cash can no longer serve as our return anchor; trigger action: reopen intermediate bond sleeves for duration and income. Fourth, Yield Curve Inversion: Using our point-in-time ALFRED data, if the 10-year minus 2-year Treasury spread re-inverts below -0.20%, an immediate risk committee review is triggered.
+
+[3:55 - 4:15]
+Our specific committee ask today is: Approve a 12-month Pilot capped at a $10 million sub-portfolio sleeve, managed by the Portfolio Analyst with monthly risk tracking and a formal quarterly committee audit against these four triggers. Thank you, and I look forward to answering the committee's questions.

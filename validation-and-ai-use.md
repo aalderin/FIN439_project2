@@ -4,7 +4,7 @@
 **Project:** Project 2 — Investment Management Application  
 **Artifact:** `docs/validation-and-ai-use.md`  
 
-> **AI Disclosure:** Antigravity (Anthropic Claude and Google Gemini models) was utilized as an interactive programming and research assistant for code structuring, debugging Streamlit callbacks, refactoring XBRL parsing logic, and organizing sensitivity tables. All model outputs, mathematical calculations, and financial conclusions were independently verified and audited against standard financial principles.  
+> **AI Disclosure:** Antigravity (Anthropic Claude and Google Gemini models) and ChatGPT Codex were utilized as an interactive programming and research assistant for code structuring, debugging Streamlit callbacks, refactoring XBRL parsing logic, and organizing sensitivity tables. All model outputs, mathematical calculations, and financial conclusions were independently verified and audited against standard financial principles.  
 > **Course Disclaimer:** Built for educational purposes for FIN 43900; this analysis constitutes an academic demonstration, not professional investment advice.
 
 ---

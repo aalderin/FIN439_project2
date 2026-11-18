@@ -1,0 +1,22 @@
+Transcript - Video 2: Codebase Walkthrough & Validation Test
+Student: A. Alderin
+Course: FIN 43900 (AI in Finance), Fall 2026, Purdue University
+Project 2: Investment Management Application
+
+[0:00 - 0:25]
+Hi everyone, my name is A. Alderin, and this is Video 2 for FIN 43900 Project 2. As required: I used AI tools, specifically Google Antigravity with Claude and Gemini, to help me organize and debug my code, but all the financial math, code implementation, and validation tests are entirely my own. This is an educational demonstration for class, not investment advice.
+
+[0:25 - 1:25]
+To start with the architecture: our pipeline flows from raw price data, into our financial math engine, and finally into an interactive Streamlit app. Here in prices.csv, we have 60 monthly adjusted-close prices for our four ETF sleeves: SGOV for cash, VGIT for Treasuries, VCIT for corporate credit, and VTI for broad equities, covering late 2021 through late 2026. In portfolio.py, the function estimate_from_csv processes that raw data: it converts monthly prices into monthly returns; it annualizes average returns by multiplying by 12; it annualizes volatility by multiplying standard deviation by the square root of 12; and it constructs our full 4-by-4 covariance matrix using pairwise correlations and individual volatilities. Everything is written in standard-library Python—no black-box optimization packages—so the entire math pipeline is completely transparent.
+
+[1:25 - 2:30]
+When we run python portfolio.py directly in the terminal, the main function evaluates our baseline benchmarks: Equal Weight gives only 5.20% expected return—failing our 6.5% mandate hurdle; a traditional 40/60 benchmark passes the return hurdle, but has 0% in liquid reserves and carries high volatility at 10.46%. To find a portfolio that actually beats these baselines, we look at the function lowest_risk_mix in portfolio.py. Instead of using an unconstrained continuous solver that gives fractional decimals, our code performs a discrete grid search in 5 percentage point steps across all four assets. For every combination that sums to 100%: it checks if expected return is at least 6.5%; it checks if reserve-eligible assets—summing SGOV and VGIT—are at least 3%; and for qualifying mixes, it computes portfolio variance w-transpose Sigma w, takes the square root for volatility, and saves the mix with the absolute lowest volatility.
+
+[2:30 - 3:30]
+Now let's launch the app with streamlit run app.py. When we upload prices.csv in the sidebar, the app runs lowest_risk_mix across our 60-month dataset. Looking at the screen under 'Lowest-risk mix': our optimal allocation is 65% SGOV and 35% VTI. Expected return is 6.79%, clearing our 6.5% target; volatility is just 5.62%—cutting risk nearly in half compared to the 60/40 benchmark; and reserve-eligible weight is 65.0%, well above the 3% minimum. Intermediate bonds get 0% because SGOV provides a 3.8% cash yield with almost zero volatility, dominating fixed income.
+
+[3:30 - 4:25]
+Next, I tested the stability of this system with two stress runs: First, in Lab 20, I ran a locked test where I shocked VCIT's expected return from 1.19% up to 3.60%—a massive 241-basis-point increase. My AI-off prediction was that the allocation would not change at all. Even at 3.6%, VCIT is still far below our 6.5% hurdle, and its volatility is nearly 8%. When executed, the weight change was 0.00 percentage points, confirming the prediction. Second, looking at what happens when we toggle 'Use last 36 monthly returns' in the app: the allocation swings dramatically: SGOV jumps to 85% and VTI drops to 15%. Because the stock market averaged 22% over those 3 years, the optimizer needed very little equity to hit 6.5%. This 20-percentage-point swing proves that the model is heavily dependent on the historical sample window.
+
+[4:25 - 4:45]
+A primary limitation of this system is that historical estimates are not forward forecasts. If cash yields compress below 2.5%, or forward equity returns drop below 11%, the 65/35 mix can no longer meet our return objective without taking on more risk. That is why our committee decision memo establishes explicit quantitative reversal triggers. In Video 3, I will present our formal committee defense and recommendations.

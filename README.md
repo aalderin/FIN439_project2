@@ -193,7 +193,10 @@ FIN439_project2/
 
 The Project 2 committee defense is supported by three video recordings (YouTube links with closed captions/transcripts):
 
-* **Video 1 — System Evolution & AI Verification:** How the portfolio mandate, code, and constraints evolved from Lab 13 through Lab 19, including an audit of one AI-generated calculation.
-* **Video 2 — Technical Architecture & Cold Run:** Step-by-step walkthrough of `portfolio.py` and `app.py`, executing the optimizer and validating the 5-point grid search.
-* **Video 3 — Investment Committee Defense:** Presentation of the **Pilot** recommendation, starting with the live Streamlit app, detailing the 20-point window sensitivity, and defining explicit stop-loss/kill triggers.
+* **Video 1 — System Evolution & AI Verification (< 3:00):** https://youtu.be/wVfqxKq1ilQ  
+  *How the portfolio mandate, code, and constraints evolved from Lab 13 through Lab 19, including an audit of one AI-generated calculation ($\sqrt{12}$ volatility check).*
+* **Video 2 — Technical Architecture & Cold Run (< 5:00):** https://youtu.be/oDl3nCiQbGY?si=mxMT9xOE6xYDQ5TP  
+  *Step-by-step walkthrough of `portfolio.py` and `app.py`, executing the optimizer, comparing baselines, and validating the 5-point grid search.*
+* **Video 3 — Investment Committee Defense (< 5:00):** https://youtu.be/2gz2A_SKcdE?si=RlbNzAVssLoAuZoJ  
+  *Presentation of the **Pilot** recommendation, starting with the live Streamlit app, detailing the 20-point window sensitivity, and defining explicit stop-loss/kill triggers.*
 

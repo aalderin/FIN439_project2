@@ -1,0 +1,16 @@
+Transcript - Video 1: Research Evolution & AI-Output Check
+Student: A. Alderin
+Course: FIN 43900 (AI in Finance), Fall 2026, Purdue University
+Project 2: Investment Management Application
+
+[0:00 - 0:15]
+Hi everyone, my name is A. Alderin, and this is Video 1 for FIN 43900 Project 2. As required: I used Google Antigravity with Claude and Gemini for code structure and drafting, but all data checks, math, and investment decisions are entirely my own. This is an educational demonstration, not investment advice.
+
+[0:15 - 1:15]
+When I started this project, my goal was to find a lowest-volatility portfolio that hits a 6.5% return target with at least 3% in cash reserves. At first, I assumed that if the optimizer found a working mix, I'd recommend adopting it right away. But that changed completely when I ran our stress test comparing a 5-year window against a 3-year window. Under the 3-year window, the asset weights swung by a massive 20 percentage points: cash (SGOV) jumped from 65% to 85%, and equities (VTI) dropped from 35% to 15%. Because stocks had a huge 22% run over the last 3 years, the optimizer realized it needed barely any equity to clear 6.5%, so it dumped 85% into cash. That 20-point swing proved to me that the model is hyper-sensitive to the time horizon you pick. That single test is what changed my recommendation from 'Adopt' to a cautious, bounded 'Pilot' with strict guardrails.
+
+[1:15 - 2:05]
+Because the model is sensitive, I audited all AI code suggestions. The most critical error I caught was in portfolio.py. When converting monthly returns to annual metrics, the AI correctly multiplied average return by 12. But for volatility—which is standard deviation—the AI also suggested multiplying linearly by 12. I caught that immediately: returns scale with time, but risk scales with the square root of time. For monthly data, you have to multiply by the square root of 12—about 3.46—not 12! Multiplying by 12 would have overstated market volatility by more than three times, completely wrecking the minimum-variance optimizer. I rejected the AI's formula, implemented sqrt(12), and confirmed our real volatilities—like 0.46% for SGOV and 15.8% for VTI.
+
+[2:05 - 2:20]
+In short: the 20-point window shock drove my Pilot recommendation, and auditing the AI's math saved the model from a critical risk error. In Video 2, I'll walk through the codebase.
